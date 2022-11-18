@@ -9,17 +9,16 @@ import useStyles from "./styles";
 function MapDetails({ place }) {
   const classes = useStyles();
   const isDesktop = useMediaQuery("(min-width:600px)");
-  const [photo, setPhoto] = useState("");
+  // const [photo, setPhoto] = useState("");
 
-  useEffect(() => {
-    let photoRef;
-    if (place.photos) {
-      photoRef = place.photos[0].photo_reference;
-      getPhotoData(photoRef).then((res) => {
-        setPhoto(res.data);
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (place.photos) {
+  //     let photoRef = place.photos[0].photo_reference;
+  //     getPhotoData(photoRef).then((res) => {
+  //       setPhoto(res.data);
+  //     });
+  //   }
+  // }, []);
 
   return (
     <>
@@ -34,11 +33,11 @@ function MapDetails({ place }) {
           >
             {place.name}
           </Typography>
-          {photo ? (
+          {/* {place.photos ? (
             <img className={classes.pointer} src={photo} alt={place.name} />
           ) : (
             ""
-          )}
+          )} */}
           {place.rating ? (
             <Rating size="small" value={Number(place.rating)} readOnly />
           ) : (

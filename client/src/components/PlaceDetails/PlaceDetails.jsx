@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -12,7 +12,7 @@ import {
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
 import Rating from "@material-ui/lab/Rating";
-import { getPhotoData } from '../../api';
+import { getPhotoData } from "../../api";
 
 import useStyles from "./styles.js";
 
@@ -22,29 +22,24 @@ const PlaceDetails = ({ place, selected, refProp }) => {
   }
   const classes = useStyles();
 
-  const [photo, setPhoto] = useState('');
+  // const [photo, setPhoto] = useState("");
 
-  useEffect(() => {
-    let photoRef
-    let photoUrl
-    if(place.photos){
-      photoRef = place.photos[0].photo_reference;
-      getPhotoData(photoRef).then((res) => {
-        setPhoto(res.data)
-      })
-    }
-  }, []);
-
-
-  console.log(photo)
+  // useEffect(() => {
+  //   if (place.photos) {
+  //     let photoRef = place.photos[0].photo_reference;
+  //     getPhotoData(photoRef).then((res) => {
+  //       setPhoto(res.data);
+  //     });
+  //   }
+  // }, []);
 
   return (
     <Card elevation={6}>
-      {place.photos ? <CardMedia
-        style={{ height: 150 }}
-        image={photo}
-        title={place.name}
-      /> : ''}
+      {/* {place.photos ? (
+        <CardMedia style={{ height: 150 }} image={photo} title={place.name} />
+      ) : (
+        ""
+      )} */}
       <CardContent>
         <Typography gutterBottom variant="h5">
           {place.name}

@@ -31,6 +31,7 @@ const App = () => {
   useEffect(() => {
     if (coordinates.lat && coordinates.lng) {
     setIsLoading(true);
+    console.log(isLoading)
     getPlacesData(type, coordinates.lat, coordinates.lng).then((res) => {
       setPlaces(
         res.data.results?.filter(
@@ -41,7 +42,7 @@ const App = () => {
       setIsLoading(false);
     });
     }
-  }, [type, coordinates]);
+  }, [type, coordinates]); //needs fixing remove type add places?
 
   return (
     <>
