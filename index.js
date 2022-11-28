@@ -1,14 +1,12 @@
 const express = require('express')
+const path = require('path');
 const app = express()
 const axios = require('axios')
-const cors = require('cors')
 const dotenv = require('dotenv')
 
 dotenv.config()
 
 const key = process.env.API_KEY;
-
-app.use(cors())
 
 app.get('/data', (req, res) => {
     let type = req.query.type
@@ -35,6 +33,12 @@ app.get('/photo', (req, res) => {
             console.log(error)
         })
 })
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+  
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
+  }
 
 const PORT = 4000;
 

@@ -31,7 +31,6 @@ const Map = ({
           styles: mapStyle,
         }}
         onChange={(e) => {
-          console.log(e);
           setCoordinates({ lat: e.center.lat, lng: e.center.lng });
         }}
         onChildClick={(child) => setChildClicked(child)}

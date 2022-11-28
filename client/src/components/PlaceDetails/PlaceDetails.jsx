@@ -21,17 +21,20 @@ const PlaceDetails = ({ place, selected, refProp }) => {
     refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
   const classes = useStyles();
+  
+// console.log(place)
+//   const [photo, setPhoto] = useState("");
 
-  // const [photo, setPhoto] = useState("");
+//   useEffect(() => {
+//     if (place.photos) {
+//       let photoRef = place.photos[0].photo_reference;
+//       getPhotoData(photoRef).then((res) => {
+//         setPhoto(res.data);
+//       });
+//     }
+//   }, [place]);
 
-  // useEffect(() => {
-  //   if (place.photos) {
-  //     let photoRef = place.photos[0].photo_reference;
-  //     getPhotoData(photoRef).then((res) => {
-  //       setPhoto(res.data);
-  //     });
-  //   }
-  // }, []);
+  // console.log(photo)
 
   return (
     <Card elevation={6}>
