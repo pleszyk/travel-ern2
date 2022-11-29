@@ -43,6 +43,8 @@ const App = () => {
     }
   }, [type, coordinates]);
 
+  console.log(places)
+
   return (
     <>
       <CssBaseline />
